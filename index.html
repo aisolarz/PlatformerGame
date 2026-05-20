@@ -2,15 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platformer Improvement Kit</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Pink Adventure</title>
+
     <script src="./lib/phaser.js"></script>
+
     <script src="./src/Scenes/Load.js"></script>
+    <script src="./src/Scenes/Start.js"></script>
     <script src="./src/Scenes/Platformer.js"></script>
+    <script src="./src/Scenes/Win.js"></script>
+    <script src="./src/Scenes/GameOverScene.js"></script>
     <script src="./src/main.js"></script>
+
+    <style>
+
+        body {
+            margin: 0;
+            background: black;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+        }
+
+    </style>
 </head>
+
 <body>
-    <div id="phaser-game"></div>
-    <span id="description"></span>
 </body>
 </html>

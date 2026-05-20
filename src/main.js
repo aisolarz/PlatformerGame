@@ -1,41 +1,40 @@
-// Jim Whitehead
-// Created: 4/14/2024
-// Phaser: 3.70.0
-//
-// Cubey
-//
-// An example of putting sprites on the screen using Phaser
-// 
-// Art assets from Kenny Assets "Shape Characters" set:
-// https://kenney.nl/assets/shape-characters
+const config = {
 
-// debug with extreme prejudice
-"use strict"
+    type: Phaser.AUTO,
 
-// game config
-let config = {
-    parent: 'phaser-game',
-    type: Phaser.CANVAS,
-    render: {
-        pixelArt: true  // prevent pixel art from getting blurred when scaled
-    },
+    width: 800,
+    height: 600,
+
+    parent: "phaser-game",
+
+    pixelArt: true,
+
     physics: {
-        default: 'arcade',
+        default: "arcade",
+
         arcade: {
-            debug: true,
             gravity: {
-                x: 0,
                 y: 0
-            }
+            },
+
+            debug: false
         }
     },
-    width: 1440,
-    height: 900,
-    scene: [Load, Platformer]
-}
 
-var cursors;
-const SCALE = 2.0;
-var my = {sprite: {}, text: {}, vfx: {}};
+    scene: [
+        Load,
+        Start,
+        Platformer,
+        Win,
+        GameOver
+    ]
+};
 
 const game = new Phaser.Game(config);
+
+let cursors;
+
+const my = {
+    sprite: {},
+    vfx: {}
+};
